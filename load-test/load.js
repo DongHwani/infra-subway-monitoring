@@ -2,15 +2,13 @@ import http from 'k6/http';
 
 export let options = {
     stages: [
-        { duration: '5m', target: 10 },
+        { duration: '10m', target: 26 },
+        { duration: '10m', target: 26 },
         { duration: '5m', target: 15 },
-        { duration: '5m', target: 20 },
-        { duration: '5m', target: 26 },
-        { duration: '5m', target: 26 },
-        { duration: '5m', target: 0 },
+        { duration: '5m', target: 0 }
     ],
     thresholds: {
-        http_req_duration: ['p(99)<1500'], //1.5 초이내에 요청의 99% 완료
+        http_req_duration: ['p(99)<500'], //0.5 초이내에 요청의 99% 완료
         http_req_failed: ['rate<0.01'], // 요청의 1%미만 실패
     },
 };

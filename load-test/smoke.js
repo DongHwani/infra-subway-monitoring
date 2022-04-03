@@ -7,7 +7,7 @@ export let options = {
         { duration: '30s', target: 3 },
     ],
     thresholds: {
-        http_req_duration: ['p(99)<1500'], //1.5 초이내에 요청의 99% 완료
+        http_req_duration: ['p(99)<500'], //1.5 초이내에 요청의 99% 완료
         http_req_failed: ['rate<0.01'], // 요청의 1%미만 실패
     },
 };
